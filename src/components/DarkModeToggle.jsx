@@ -3,7 +3,7 @@ import React from 'react';
 const DarkModeToggle = ({ darkMode, setDarkMode }) => {
   return (
     <button onClick={() => setDarkMode(!darkMode)}>
-      {darkMode ? "Toggle Light Mode" : "Toggle Dark Mode"}
+      {darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
     </button>
   );
 };
