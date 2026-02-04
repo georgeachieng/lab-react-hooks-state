@@ -13,6 +13,10 @@ const App = () => {
     setCart((prevCart) => [...prevCart, product]);
   };
 
+  const removeFromCart = (index) => {
+    setCart((prevCart) => prevCart.filter((_, i) => i !== index));
+  };
+
   return (
     <div className={darkMode ? "dark" : "light"}>
       <header>
@@ -30,7 +34,7 @@ const App = () => {
         >
           <option value="All">All</option>
           <option value="Fruits">Fruits</option>
-          <option value="Vegetable">Vegetable</option>
+          <option value="Vegetables">Vegetables</option>
           <option value="Dairy">Dairy</option>
         </select>
       </section>
@@ -40,7 +44,7 @@ const App = () => {
       </main>
 
       <aside>
-        <Cart cart={cart} />
+        <Cart cart={cart} removeFromCart={removeFromCart} />
       </aside>
     </div>
   );
