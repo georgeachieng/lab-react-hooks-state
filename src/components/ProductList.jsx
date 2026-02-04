@@ -4,7 +4,7 @@ import ProductCard from './ProductCard';
 export const sampleProducts = [
   { id: 1, name: 'Apple', price: '$1.00', category: 'Fruits', inStock: true },
   { id: 2, name: 'Milk', price: '$2.50', category: 'Dairy', inStock: false },
-  { id: 3, name: 'Carrots', price: '$1.20', category: 'Vegetables', inStock: true },
+  { id: 3, name: 'Carrots', price: '$1.20', category: 'Vegetable', inStock: true },
   { id: 4, name: 'Cheese', price: '$3.00', category: 'Dairy', inStock: true }
 ];
 

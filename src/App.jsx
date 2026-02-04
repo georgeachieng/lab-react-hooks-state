@@ -1,24 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ProductList from './components/ProductList';
 import DarkModeToggle from './components/DarkModeToggle';
 import Cart from './components/Cart';
 import './App.css';
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem("darkMode");
-    return savedTheme === "true";
-  });
-
+  const [darkMode, setDarkMode] = useState(false);
   const [cart, setCart] = useState([]);
   const [category, setCategory] = useState("All");
-
-  
-  useEffect(() => {
-    localStorage.setItem("darkMode", darkMode);
-    document.body.className = darkMode ? "dark" : "light";
-  }, [darkMode]);
-
 
   const addToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
@@ -29,10 +18,9 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className={darkMode ? "dark" : "light"}>
       <header>
         <h1>🛒 Shopping App</h1>
-        <p>Browse products, filter by category, and manage your cart.</p>
         <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
         <p>Cart Items: {cart.length}</p>
       </header>
@@ -46,7 +34,7 @@ const App = () => {
         >
           <option value="All">All</option>
           <option value="Fruits">Fruits</option>
-          <option value="Vegetables">Vegetables</option>
+          <option value="Vegetable">Vegetable</option>
           <option value="Dairy">Dairy</option>
         </select>
       </section>
