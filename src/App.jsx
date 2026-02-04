@@ -13,10 +13,6 @@ const App = () => {
     setCart((prevCart) => [...prevCart, product]);
   };
 
-  const removeFromCart = (index) => {
-    setCart((prevCart) => prevCart.filter((_, i) => i !== index));
-  };
-
   return (
     <div className={darkMode ? "dark" : "light"}>
       <header>
@@ -44,7 +40,7 @@ const App = () => {
       </main>
 
       <aside>
-        <Cart cart={cart} removeFromCart={removeFromCart} />
+        <Cart cart={cart} />
       </aside>
     </div>
   );
